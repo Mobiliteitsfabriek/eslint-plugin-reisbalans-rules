@@ -1,5 +1,7 @@
+var helpers = require("../lib/helpers");
+
 const reportError = (context, node) => {
-  const name = node.source.raw.split('/').pop().split('.')[0]
+  const name = helpers.stringToComponentName(node.source.raw)
   .replace(/[A-Z]?[a-z]+|[A-Z]+(?![a-z])|\d+/g, (word) => word.charAt(0).toUpperCase() + word.slice(1))
   .replace(/[\W+|_]/g, "")
   const fix = `import { ReactComponent as ${name} } from ${node.source.raw}`
