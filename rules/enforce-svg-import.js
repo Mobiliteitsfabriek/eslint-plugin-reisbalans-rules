@@ -1,7 +1,6 @@
 const reportError = (context, node) => {
-  const parts = node.source.raw.split(".")
-  const name = parts[1]
-  .replace(/[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g, (word) => word.charAt(0).toUpperCase() + word.slice(1))
+  const name = node.source.raw.split('/').pop().split('.')[0]
+  .replace(/[A-Z]?[a-z]+|[A-Z]+(?![a-z])|\d+/g, (word) => word.charAt(0).toUpperCase() + word.slice(1))
   .replace(/[\W+|_]/g, "")
   const fix = `import { ReactComponent as ${name} } from ${node.source.raw}`
   
