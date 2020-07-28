@@ -1,4 +1,4 @@
-var helpers = require("../../lib/helpers");
+var helpers = require("../lib/helpers");
 
 const reportError = (context, node) => {
   const name = helpers.stringToComponentName(node.source.raw)
