@@ -7,7 +7,7 @@ module.exports = {
     // eslint-disable-next-line global-require
     'enforce-svg-import': require('./rules/enforce-svg-import'),
     // eslint-disable-next-line global-require
-    'disallow-interpolation-for-translations': require('./rules/disallow-interpolation-for-translations'),
+    'disallow-tagged-templates-for-translations': require('./rules/disallow-tagged-templates-for-translations'),
   },
   configs: {
     recommended: {

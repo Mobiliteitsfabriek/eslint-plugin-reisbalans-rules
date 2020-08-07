@@ -2,7 +2,7 @@ const reportError = (context, node) => {
   const reportConfig = {
     node,
     loc: node.loc,
-    message: `You cannot use interpolation templates for translations!`,
+    message: "You cannot use tagged templates for translations. This will not be extracted by our automated tools.",
   }
   
   const value = (node.quasi && node.quasi.quasis && node.quasi.quasis.length && node.quasi.quasis[0].value.raw) || undefined
@@ -19,7 +19,7 @@ const reportError = (context, node) => {
 module.exports = {
   meta: {
     docs: {
-      description: "Disallow string interpolation for translation tags",
+      description: "Disallow tagged templates for translation tags",
       recommended: true
     },
     fixable: "code",
