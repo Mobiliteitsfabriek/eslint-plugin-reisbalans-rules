@@ -6,6 +6,8 @@ module.exports = {
     'enforce-scss-modules': require('./rules/enforce-scss-modules'),
     // eslint-disable-next-line global-require
     'enforce-svg-import': require('./rules/enforce-svg-import'),
+    // eslint-disable-next-line global-require
+    'disallow-tagged-templates-for-translations': require('./rules/disallow-tagged-templates-for-translations'),
   },
   configs: {
     recommended: {
